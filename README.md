@@ -1,82 +1,75 @@
-# Mental-Health-Support-Chatbot
-A RAG-based conversational AI system designed to provide context-aware and empathetic mental health responses using external knowledge sources.
 
-🧠 Problem
+---
 
-Traditional chatbots:
+# 🧠 Mental Health Chatbot (RAG-Based Conversational AI)
 
-Lack context awareness
-Generate generic responses
-Cannot use external knowledge
+## 🚀 Overview
+Built an end-to-end **Retrieval-Augmented Generation (RAG)** system to improve response quality in mental health conversations. The chatbot retrieves relevant context from a knowledge base and uses it to generate grounded, consistent, and empathetic responses.
 
-This system addresses these limitations using retrieval-augmented generation (RAG).
+## 🧠 Problem
+Standard LLM-based chatbots:
+- Produce generic responses  
+- Lack contextual grounding  
+- Do not leverage external knowledge  
 
-🏗 Architecture
-LLM Layer → Generates responses
-Retriever → Fetches relevant context
-Vector Store → Stores embeddings
-Pipeline → Combines retrieval + generation
+This project addresses these gaps using a **retrieval + generation pipeline**.
 
-⚙️ System Components
-🤖 LLM Layer
-Groq (LLaMA 3) via langchain_groq
-Low temperature for consistent outputs
+## 🏗️ Architecture
+- **Retriever** → Fetches relevant context from vector database  
+- **LLM** → Generates responses using retrieved context  
+- **Pipeline** → Ensures grounded and context-aware outputs  
 
-📄 Document Ingestion
-PDF-based knowledge loading (PyPDFLoader)
-Scalable document input
+## ⚙️ Core Components
 
-✂️ Text Processing
-RecursiveCharacterTextSplitter
-Chunking for better retrieval
+**LLM Layer**
+- Groq (LLaMA 3) via `langchain_groq`  
+- Deterministic configuration (low temperature)
 
-🔍 Embeddings
-all-MiniLM-L6-v2 (HuggingFace)
-Converts text into vectors
+**Retrieval System**
+- LangChain `RetrievalQA`  
+- Context injection into prompts  
 
-🗄 Vector Database
-ChromaDB
-Persistent semantic storage
+**Embeddings**
+- HuggingFace `all-MiniLM-L6-v2`  
+- Semantic similarity search  
 
-🔗 Retrieval + QA
-LangChain RetrievalQA
-Context injection into prompts
+**Vector Database**
+- ChromaDB with persistent storage  
 
-🧾 Prompt
-You are a compassionate mental health chatbot. Respond thoughtfully:
+**Data Pipeline**
+- PDF ingestion (`PyPDFLoader`)  
+- Text chunking (`RecursiveCharacterTextSplitter`)  
 
-{context}
+**Interface**
+- Gradio ChatInterface for real-time interaction  
 
-User: {question}
-Chatbot:
-🌐 Interface
-Gradio ChatInterface
-Real-time interaction
-🔄 Workflow
+## 🔄 Workflow
 
-User Query → Retrieve Context → Inject into Prompt → LLM → Response
+User Query → Semantic Retrieval → Context Injection → LLM → Response
 
-🔑 Features
-Context-aware responses
-Semantic search
-PDF knowledge ingestion
-Emotion-focused prompting
-Interactive UI
 
-🏗 Tech Stack
-LLM: Groq (LLaMA 3)
-Framework: LangChain
-Embeddings: HuggingFace
-Vector DB: ChromaDB
-UI: Gradio
-Language: Python
+## 🔑 Features
+- Context-aware response generation  
+- Retrieval-augmented architecture  
+- Semantic search over documents  
+- Modular and scalable pipeline  
+- Interactive chatbot interface
 
-📌 Key Learnings
-RAG pipeline design
-Vector databases & embeddings
-Context-aware AI systems
-End-to-end application development
 
-⚠️ Note
 
+## 🏗️ Tech Stack
+- **LLM:** Groq (LLaMA 3)  
+- **Framework:** LangChain  
+- **Embeddings:** HuggingFace  
+- **Vector DB:** ChromaDB  
+- **UI:** Gradio  
+- **Language:** Python  
+
+## 📌 Key Takeaways
+- Designed and implemented a production-style **RAG pipeline**  
+- Improved response grounding using retrieval mechanisms  
+- Built a modular system combining LLMs and vector search  
+- Developed an end-to-end AI application  
+
+## ⚠️ Disclaimer
 This project is a technical prototype and not a substitute for professional mental health support.
