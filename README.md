@@ -69,7 +69,10 @@ User Query → Semantic Retrieval → Context Injection → LLM → Response
 - Designed and implemented a production-style **RAG pipeline**  
 - Improved response grounding using retrieval mechanisms  
 - Built a modular system combining LLMs and vector search  
-- Developed an end-to-end AI application  
+- Developed an end-to-end AI application
+
+## Code 
+👉 *https://colab.research.google.com/drive/1hcbNd04F3yWgCWcTQTgEw_Eo5Ad9-A0n#scrollTo=HxQR6_wVcjS9*
 
 ## ⚠️ Disclaimer
 This project is a technical prototype and not a substitute for professional mental health support.
